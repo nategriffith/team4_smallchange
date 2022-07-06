@@ -1,0 +1,81 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+
+<Meta title="Guides and Resources/HTML and CSS/Introduction"/>
+
+
+<h1>HTML/CSS</h1>
+
+
+<h2>Introduction</h2>
+<p>Within the Guides and Resources/HTML and CSS folder on Storybook are two examples that display good and bad HTML/CSS variations of the same page and this will walk you through the key differences between them and how to turn your bad HTML/CSS into good HTML/CSS.</p>
+
+
+<p>First, please refer below to http://www.washington.edu/accesscomputing/webd2/student/unit3/module4/lesson1.html to review the CSS Box Model which is integral to good CSS design techniques before we get started.</p>
+
+
+<iframe
+  src={'http://www.washington.edu/accesscomputing/webd2/student/unit3/module4/lesson1.html'}
+  style={{ width: '100%', height: '50%' }}
+></iframe>
+
+Other Sources:  
+* https://www.w3schools.com/Css/css_boxmodel.asp  
+* https://drafts.csswg.org/css-box-3/#box-model
+
+
+<h2>The Differences</h2>
+<p>Now that you've reviewed the Box Model, let's first look at the bad CSS below in tablet view below (You can enter tablet view below by hitting the button 8th to the right of the 'Story' button):</p>
+
+
+<iframe
+  src={'http://localhost:6006/?path=/story/module-0-welcome-to-small-change-tips-and-tricks-from-a-former-leapster-html-and-css-bad-css-styling--default-story'}
+  style={{ width: '100%', height: '50%' }}
+></iframe>
+
+
+<p>Flip between the bad CSS example and the good CSS example to notice the lack of difference in appearance.  Now try switching the view from tablet mode to 'Large mobile', 'Small mobile', or 'Reset viewport' (for the web view) and clicking between the good and bad example to see the resizing differences.</p>
+
+
+<p>Next let's look at the difference between the pages using web developer tools in the browser.  Right click on a part of the bad CSS example and hit 'Inspect' at the bottom of the list to bring up the web developer browser tools.  Click the button in the top left of this side bar that opens up that should say 'Select an image in the page to inspect it' when hovering over it.  Begin to hover over different parts of the page to observe the margin, padding, border and content of each item on the page.  Hover over the word 'Form' to notice the blue shaded padding around the content (the word 'Form'), the thin blue border on the page and then the orange shaded margin around that; this is the CSS Box Model in action.</p>
+
+
+<p>Now let's look at the HTML and CSS to see the reason behind some of the resizing differences that make the Bad example look so poorly when adjusting the viewport for the page.  Please refer to the src\examples\guide-examples\bad-styling and src\examples\guide-examples\good-styling folder for the proper HTML, SCSS and Typescript files.</p>
+
+
+<h3>Systemic Differences</h3>
+<p>When first glancing between the good and bad html files, notice the most obvious difference that the good HTML utilizes class names for a lot of the elements to be more specific when styling with CSS.  This is a good practice to get into to most efficiently style similar elements in similar ways.</p>
+
+
+<p>Now glance between the good and bad HTML files.  The good HTML utilizes a few techniques that greatly improve CSS code clarity: variables to represent commonly reused color schemes (i.e. primaryColor, secondaryColor, etc...) and global styling utilizing the :host syntax which will enforce that CSS styling for all elements which don't explicitly overwrite the global styling.</p>
+
+
+<h3>Piecemeal Differences</h3>
+<h4>Header</h4>
+<p>Let's go down the page now to see what else is different piece by piece.  First, we have the header logo going from being in just a header tag to being in a span tag within a div tag within a header tag.  The reason for this is to give you maximal control over the positioning of the logo by essentially placing one box model within another box model as the content.  By doing this you can more accurately fine-tune an elements position.  You can use the web developer tools to hover over the word 'Header' to see how the box model is working here to accomplish that task.</p>  
+
+
+<p>Compare this to the bad CSS example which, if you look at the .SCSS file for, has clearly used "eyeballing" techniques (setting the margin, padding, etc... to random values to make it look good to the developer on just the viewport they've been working on to develop).  If you are able to make the viewport large enough you will notice how the bad CSS example's header does not begin to center itself towards the middle of the page and instead stays flush with the left hand side.  This lack of responsiveness to the viewing screen size is not good practice.</p>
+
+
+<h4>Navigation Bar</h4>
+<p>On the bad example, hover your mouse between "Link 1" and "Link 2" and in the white area around them, notice how there's no hover effect?  Now try it on the good example, notice how it provides a hover effect like you're going to click on something?  This is the result of the CSS Box Model at work.</p>
+
+
+<p>Use the web developer tools to inspect elements and now hover over "Link 1" and "Link 2" in each example.  The bad example uses "eyeballing" and non-uniform margin and padding measurements.  This results in an inefficient click box that causes you to have to click directly on the link as opposed to being able to click on some of the area immediately around the link to change web pages.</p>
+
+
+<p>Why is this important? For users with disabilities, providing a larger area for a screen-reader to be able to recognize and read-back the link options along with the increased surface area that someone with affected eyesight has to be able to click the link they want is paramount to increasing accessibility for these users.</p>
+
+
+<p>Additionally, as mentioned before in the systemic differences, the good example utilizes classes which distinctly point to the specific items in the nav bar that will be stylized whereas the bad example's CSS simply stylizes any and all ul and li tags regardless of where they are on the page.  In the bad example there are no additional ul or li tags to showcase this but if you were to add any ul/li items to the page then you'd notice they'd inherit the CSS style but in the good example they would not.</p>
+
+
+<h4>Form</h4>
+<p>Look at the bad example's SCSS file, the form's margin attribute to be exact.  This is another case of poor "eyeballing" to complete a form; use the word "auto" when appropriate like in the good example's SCSS file to allow auto-resizing when changing the viewport size.</p>
+
+
+<p>A second point this form example shows between bad and good CSS is that whenever you have a descendant box (placing a box model as the content of another box model), it is best to style the outermost parent box first in order to better maintain aesthetically pleasing symmetry but also to, again, aid potentially disabled users to better utilize a screen-reader to inform them of how the page is constructed and where they are on the page.</p>
+
+
+.

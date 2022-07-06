@@ -1,0 +1,23 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+
+<Meta title="Guides and Resources/Javascript/Introduction" />
+
+
+<h1>Javascript</h1>
+<p>In the Guides and Resources/Javascript folder on Storybook is an example of using javascript to create a function that dictates an action following a click event.</p>
+
+<p>First click the 3 lines icon (hamburger icon) and watch how it makes the nav list appear and disappear on each click.</p>
+
+Now examine the files in the src\examples\guide-examples\javascript folder to see how this is accomplished.  Pay special attention to the javascript function in the typescript file for a few things:
+* The // @ts-nocheck at the top of the file which ensures that there will be no typescript checking and thus allowing for javascript within the file.  
+* The binding for the function to execute the eventlistener for the click.
+* How the function is modifying the html of the nav element so the SCSS file can differentiate between how to style the content of the page based on the click events that occur.  If you have your web developer browser tools open you can actually see the html displayed differently after each click.
+
+More Resources:  
+* w3schools: https://www.w3schools.com/js/  
+* Pluralsight: https://app.pluralsight.com/library/courses/javascript-fundamentals/table-of-contents  
+* Javscript.info: https://javascript.info/first-steps
+
+
+.

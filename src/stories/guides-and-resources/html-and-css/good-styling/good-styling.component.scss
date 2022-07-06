@@ -1,0 +1,105 @@
+/*
+    ***************************************************************************************************************************************
+    Note: SCSS is a superset of CSS3 - normal CSS will work in this file. SCSS adds additional functionality such as variables and nesting.
+    If interested, check out: https://sass-lang.com/guide for additional information.
+    ***************************************************************************************************************************************
+*/
+$primaryColor: blue;
+$primaryTextColor: black;
+$secondaryTextColor: white;
+
+$viewportSizing: 996px;
+
+// :host is a keyword to target the base of the component.
+:host {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
+// *** HEADER BAR ***
+.header {
+    display: block;
+    width: 100%;
+    color: $secondaryTextColor;
+    background-color: $primaryColor;
+
+    .header__container {
+        max-width: $viewportSizing;
+        margin-left: auto;
+        margin-right: auto;
+        padding: .5rem 0;
+    }
+
+    .header__logo {
+        padding: 0 1rem;
+        font-size: 24px;
+        line-height: 1.5em;
+    }
+}
+
+// *** NAV BAR ***
+.nav {
+    display: block;
+    width: 100%;
+    color: $primaryTextColor;
+    background-color: white;
+
+    .nav__list {
+        max-width: $viewportSizing;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .nav__list-item {
+        display: inline;
+    }
+}
+
+.nav-link {
+    display: inline-block;
+    padding: .5rem 1rem;
+    color: blue;
+}
+
+// ** HEADER TEXT ***
+h1 {
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+    font-size: 32px;
+    line-height: 1.5em;
+    border: solid 1px $primaryColor;
+    text-align: center;
+}
+
+// *** Login form ***
+.form {
+    margin: 0 auto;
+    padding: 1rem 1rem;
+    border: 1px solid gray;
+    max-width: 24rem; 
+
+    .form__group {
+        margin-bottom: 1.5rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+label {
+    display: block;
+}
+
+input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+button {
+    width: 100%;
+    color: $secondaryTextColor;
+    background-color: $primaryColor;
+}

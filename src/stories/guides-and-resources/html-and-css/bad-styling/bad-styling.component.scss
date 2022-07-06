@@ -1,0 +1,80 @@
+/*
+    ***************************************************************************************************************************************
+    Note: SCSS is a superset of CSS3 - normal CSS will work in this file. SCSS adds additional functionality such as variables and nesting.
+    If interested, check out: https://sass-lang.com/guide for additional information.
+    ***************************************************************************************************************************************
+*/
+
+// *** HEADER BAR ***
+header {
+    display: block;
+    width: 100%;
+    color: white;
+    background-color: blue;
+    font-size: 24px;
+    padding-top: 0.8rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1rem;
+}
+
+// *** NAV BAR ***
+nav {
+    width: 100%;
+    margin-left: -1.5rem;
+}
+
+ul {
+    background-color: white;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: -1.4rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+}
+
+li {
+    display: inline-block;
+    padding-right: 2rem;
+}
+
+// ** HEADER TEXT ***
+h1 {
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+    font-size: 32px;
+    line-height: 1.5em;
+    border: solid 1px blue;
+    text-align: center;
+}
+
+// *** Login form ***
+form {
+    margin-left: 13rem;
+    border: 1px solid gray;
+    width: 26rem;
+    line-height: 1.5em;
+}
+
+label {
+    padding-left: 1rem;
+    margin-top: 1rem;
+    display: block;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
+input {
+    margin-left: 1rem;
+    display: block;
+    width: 90.5%;
+    margin-bottom: 1.5rem;
+}
+
+button {
+    margin-left: 1rem;
+    margin-bottom: 1.05rem;
+    width: 92.25%;
+    color: white;
+    background-color: blue;
+}
