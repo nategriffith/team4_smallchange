@@ -1,0 +1,34 @@
+# File name: soteri-security.yml
+# Purpose: This file can be used to set repository-specific configurations for Security for Bitbucket
+# For more information on Security for Bitbucket please visit: 
+# https://sp.fmrcloud.com/sites/Cybersecurity/SitePages/Security-for-Bitbucket.aspx
+# For guidance on how to configure this file for repository-specific vulnerability detection, please visit:
+# https://sp.fmrcloud.com/sites/Cybersecurity/SitePages/Guidance-for-existing-repos---How-to-enable-the-hook-and-seed-the-security.yml-within-your-repo.aspx
+# For guidance on using this file to whitelist false positive results for hardcoded credentials, use the allowlist_paths as per the guidance linked directly below:
+# https://sp.fmrcloud.com/sites/Cybersecurity/SitePages/Guidance---Whitelisting-Detected-Secrets.aspx
+
+# This field determines whether to inherit the builtin_rules from the Global Security Settings
+# The default setting for inherit_builtin_rules is 'true'
+# While this is set to 'true' this repository will inherit the built-in rules configured in the Global Security Settings
+inherit_builtin_rules: true
+
+# This field determines whether to inherit the custom_rules from the Global Security Settings
+# The default setting for the inherit_custom_rules is 'true'
+# While this is set to 'true' this repository will inherit the custom rules defined in the Global Security Settings
+inherit_custom_rules: true
+
+# Use the rules field to modify the builtin_rules which are applied to this repository
+# While inherit_builtin_rules is set to 'true', this field can be used to modify the set of buildt-in rules which are applied to this repository
+# While inherit_builtin_rules is set to 'false', this field can be used to define the set of built-in rules which will be applied for this repository
+rules:
+
+# Use the custom_rules field to define and apply custom rules for this repository
+# While inherit_custom_rules is set to 'true', this field will allow you to define additional custom rules to apply to this repository
+# While inherit_custom_rules is set to 'false', any new custom rules you create here will be applied to this repository, without any inherited from the Global Security Settings
+# NOTE: If you create a new custom_rule with the same name as a custom_rule from the Global Security Settings, the rule you define here will override the global custom rule
+# Rules should be defined as key value pairs {rule_name}: {rule_regexp}
+custom_rules:
+
+# allowlist_paths are a list of files or paths which are whitelisted even if they contain vulnerabilities
+# Define these paths using a regexp for the value
+allowlist_paths:
